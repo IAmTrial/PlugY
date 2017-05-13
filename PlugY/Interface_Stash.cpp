@@ -45,27 +45,27 @@ int posYPutGoldBtn=-1;
 int posXTakeGoldBtn=-1;
 int posYTakeGoldBtn=-1;
 
-DWORD	getXPreviousBtn()		{return RX(posXPreviousBtn<0? D2GetResolution()?0x80:0xAF : posXPreviousBtn);}
+DWORD	getXPreviousBtn()		{return RX(posXPreviousBtn<0? 0x80 : posXPreviousBtn);}
 #define	getLPreviousBtn()		32
 DWORD	getYPreviousBtn()		{return RY(posYPreviousBtn<0 ? 0x40 : posYPreviousBtn);}
 #define	getHPreviousBtn()		32
 
-DWORD	getXNextBtn()			{return RX(posXNextBtn<0 ? D2GetResolution()?0xA0:0xCF :posXNextBtn);}//?169:SEL_X(0x63, 0x63, 0xCF, 0xA0));}
+DWORD	getXNextBtn()			{return RX(posXNextBtn<0 ? 0xA0 :posXNextBtn);}//?169:SEL_X(0x63, 0x63, 0xCF, 0xA0));}
 #define	getLNextBtn()			32
 DWORD	getYNextBtn()			{return RY(posYNextBtn<0 ? 0x40 : posYNextBtn);}
 #define	getHNextBtn()			32
 
-DWORD	getXSharedBtn()			{return RX(posXSharedBtn<0 ? D2GetResolution()?0x10:0x6F :posXSharedBtn);}//17:SEL_X(0xE3, 0xE3, 0x6F, 0x10));}//0xD8
+DWORD	getXSharedBtn()			{return RX(posXSharedBtn<0 ? 0x10 :posXSharedBtn);}//17:SEL_X(0xE3, 0xE3, 0x6F, 0x10));}//0xD8
 #define	getLSharedBtn()			32
 DWORD	getYSharedBtn()			{return RY(posYSharedBtn<0 ? 0x40 : posYSharedBtn);}
 #define	getHSharedBtn()			32
 
-DWORD	getXPreviousIndexBtn()	{return RX(posXPreviousIndexBtn<0 ?  D2GetResolution()?0x60:0x8F :posXPreviousIndexBtn);}//73:SEL_X(0x18, 0x60, 0x8F, 0x60));}
+DWORD	getXPreviousIndexBtn()	{return RX(posXPreviousIndexBtn<0 ? 0x60 :posXPreviousIndexBtn);}//73:SEL_X(0x18, 0x60, 0x8F, 0x60));}
 #define	getLPreviousIndexBtn()	32
 DWORD	getYPreviousIndexBtn()	{return RY(posYPreviousIndexBtn<0 ? 0x40 : posYPreviousIndexBtn);}
 #define	getHPreviousIndexBtn()	32
 
-DWORD	getXNextIndexBtn()		{return RX(posXNextIndexBtn<0? D2GetResolution()?0xC0:0xEF : posXNextIndexBtn);}//217:SEL_X(0x128, 0xC0, 0xEF, 0xC0));}
+DWORD	getXNextIndexBtn()		{return RX(posXNextIndexBtn<0? 0xC0 : posXNextIndexBtn);}//217:SEL_X(0x128, 0xC0, 0xEF, 0xC0));}
 #define	getLNextIndexBtn()		32
 DWORD	getYNextIndexBtn()		{return RY(posYNextIndexBtn<0 ? 0x40 : posYNextIndexBtn);}
 #define	getHNextIndexBtn()		32

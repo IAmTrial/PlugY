@@ -123,7 +123,7 @@ void printRuneword(RunesBIN* runesData, DWORD pos)
 //6FB21FAA
 void STDCALL printRunewordsPage()
 {
-	if (!D2isLODGame() || !D2GetResolution()) return D2PrintStatsPage();
+	if (!D2isLODGame()) return D2PrintStatsPage();
 	
 	LPWSTR lpText;
 	bDontPrintBorder = true;
@@ -208,7 +208,7 @@ void STDCALL printRunewordsPage()
 
 DWORD STDCALL mouseRunewordsPageLeftDown(sWinMessage* msg)
 {
-	if (!D2isLODGame() || !D2GetResolution()) return -1;
+	if (!D2isLODGame()) return -1;
 
 	if (!isOnStatsPage(msg->x,msg->y)) return 1;
 
@@ -244,7 +244,7 @@ DWORD STDCALL mouseRunewordsPageLeftDown(sWinMessage* msg)
 
 DWORD STDCALL mouseRunewordsPageLeftUp(sWinMessage* msg)
 {
-	if (!D2isLODGame() || !D2GetResolution()) return -1;
+	if (!D2isLODGame()) return -1;
 
 	if (!isOnStatsPage(msg->x,msg->y)) return 1;
 

@@ -29,9 +29,9 @@ static struct
 #define	getHPreviousPageBtn()		32
 #define isOnPreviousPageBtn(x,y)	isOnRect(x, y, getXPreviousPageBtn(), getYPreviousPageBtn(), getLPreviousPageBtn(), getHPreviousPageBtn())
 
-#define	getXNextPageBtn()		RX(D2GetResolution()?0x43:0x8A)
+#define	getXNextPageBtn()		RX(0x43)
 #define	getLNextPageBtn()		32
-#define	getYNextPageBtn()		RY(D2GetResolution()?0x40:0x70)
+#define	getYNextPageBtn()		RY(0x40)
 #define	getHNextPageBtn()		32
 #define isOnNextPageBtn(x,y)	isOnRect(x, y, getXNextPageBtn(), getYNextPageBtn(), getLNextPageBtn(), getHNextPageBtn())
 
@@ -48,7 +48,7 @@ void STDCALL printStatsPageBtns()
 	sDrawImageInfo data;
 	ZeroMemory(&data,sizeof(data));
 
-	if (printBackgroundOnMainPage && D2GetResolution())
+	if (printBackgroundOnMainPage)
 	{
 		setImage(&data, statsBackgroundImages);
 		setFrame(&data, 1);
@@ -56,16 +56,13 @@ void STDCALL printStatsPageBtns()
 	}
 
 	setImage(&data, D2LoadBuySelBtn());
-	if (D2GetResolution())
-	{
 		setFrame(&data, 12 + isDownBtn.previousPage);
 		D2PrintImage(&data, getXPreviousPageBtn(), getYPreviousPageBtn(), -1, 5, 0);
-	}
 	setFrame(&data, 14 + isDownBtn.nextPage);
 	D2PrintImage(&data, getXNextPageBtn(), getYNextPageBtn(), -1, 5, 0);
 
 	D2SetFont(1);
-	if (D2GetResolution() && isOnPreviousPageBtn(mx,my))	//print popup "previous page"
+	if (isOnPreviousPageBtn(mx,my))	//print popup "previous page"
 	{
 		lpText = getLocalString(STR_PREVIOUS_PAGE);
 		D2PrintPopup(lpText, getXPreviousPageBtn()+getLPreviousPageBtn()/2, getYPreviousPageBtn()-getHPreviousPageBtn(), WHITE, 1);
@@ -83,7 +80,7 @@ Unit* STDCALL statsPageMouseDown(sWinMessage* msg)
 
 	if (!active_newInterfaces || !D2isLODGame() ) return ptChar;
 
-	if (D2GetResolution() && isOnPreviousPageBtn(msg->x,msg->y))
+	if (isOnPreviousPageBtn(msg->x,msg->y))
 	{
 		log_msg("push down left button previous page\n");
 		isDownBtn.previousPage = 1;
@@ -109,7 +106,7 @@ Unit* STDCALL statsPageMouseUp(sWinMessage* msg)
 
 	if (!active_newInterfaces || !D2isLODGame() ) return ptChar;
 
-	if (D2GetResolution() && isOnPreviousPageBtn(msg->x,msg->y))
+	if (isOnPreviousPageBtn(msg->x,msg->y))
 	{
 		log_msg("push up left button previous page\n");
 		if (isDownBtn.previousPage)

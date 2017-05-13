@@ -43,7 +43,7 @@ void GoPreviousStatPage()
 
 void GoStatPage(int page)
 {
-	if ( (page >= 0) && (page <= lastPage + (D2GetResolution()? extraHiddenPage : 0)) )
+	if ( (page >= 0) && (page <= lastPage + (extraHiddenPage)) )
 		selectedPage = page;
 }
 

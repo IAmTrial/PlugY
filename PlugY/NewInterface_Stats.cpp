@@ -25,9 +25,9 @@
 #define	getHPreviousPageBtn()		32
 #define isOnPreviousPageBtn(x,y)	isOnRect(x, y, getXPreviousPageBtn(), getYPreviousPageBtn(), getLPreviousPageBtn(), getHPreviousPageBtn())
 
-#define	getXNextPageBtn()		RX(D2GetResolution()?0x43:0x8A)
+#define	getXNextPageBtn()		RX(0x43)
 #define	getLNextPageBtn()		32
-#define	getYNextPageBtn()		RY(D2GetResolution()?0x40:0x70)
+#define	getYNextPageBtn()		RY(0x40)
 #define	getHNextPageBtn()		32
 #define isOnNextPageBtn(x,y)	isOnRect(x, y, getXNextPageBtn(), getYNextPageBtn(), getLNextPageBtn(), getHNextPageBtn())
 
@@ -144,7 +144,7 @@ void print2Lines(WORD id, LPWSTR lpText, DWORD x, DWORD l, DWORD y)
 #define BUFSIZE 0x80
 void STDCALL printNewStatsPage()
 {
-	if (!D2isLODGame() || !D2GetResolution()) return D2PrintStatsPage();
+	if (!D2isLODGame()) return D2PrintStatsPage();
 	
 	WCHAR text[BUFSIZE];
 	LPWSTR lpText;
@@ -612,7 +612,7 @@ if ( version_D2Client <= V110 )
 
 DWORD STDCALL mouseNewStatsPageLeftDown(sWinMessage* msg)
 {
-	if (!D2isLODGame() || !D2GetResolution()) return -1;
+	if (!D2isLODGame()) return -1;
 
 	if (!isOnStatsPage(msg->x,msg->y)) return 1;
 
@@ -712,7 +712,7 @@ void sendAssignStats(DWORD code, DWORD nbStatPointsRemaining)
 
 DWORD STDCALL mouseNewStatsPageLeftUp(sWinMessage* msg)
 {
-	if (!D2isLODGame() || !D2GetResolution()) return -1;
+	if (!D2isLODGame()) return -1;
 
 	if (!isOnStatsPage(msg->x,msg->y)) return 1;
 

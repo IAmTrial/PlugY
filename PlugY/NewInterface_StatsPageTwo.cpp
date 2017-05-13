@@ -18,13 +18,13 @@
 #define	getHCloseBtn()			32
 #define isOnCloseBtn(x,y) isOnRect(x, y, getXCloseBtn(), getYCloseBtn(), getLCloseBtn(), getHCloseBtn())
 
-#define	getXPreviousPageBtn()		RX(D2GetResolution()?0x19:0x77)//0x70
+#define	getXPreviousPageBtn()		RX(0x19)//0x70
 #define	getLPreviousPageBtn()		32
 #define	getYPreviousPageBtn()		RY(0x40)
 #define	getHPreviousPageBtn()		32
 #define isOnPreviousPageBtn(x,y)	isOnRect(x, y, getXPreviousPageBtn(), getYPreviousPageBtn(), getLPreviousPageBtn(), getHPreviousPageBtn())
 
-#define	getXNextPageBtn()		RX(D2GetResolution()?0x43:0xA1)//0x70
+#define	getXNextPageBtn()		RX(0x43)//0x70
 #define	getLNextPageBtn()		32
 #define	getYNextPageBtn()		RY(0x40)
 #define	getHNextPageBtn()		32
@@ -195,7 +195,7 @@ void STDCALL printNewStatsPageTwo(int currentPage)
 
 	//print background previous/next page buttons
 	setImage(&data, statsBackgroundImages);
-	setFrame(&data, D2GetResolution()?1:0);
+	setFrame(&data, 1);
 	D2PrintImage(&data, getXPreviousPageBtn()-7, getYPreviousPageBtn()+8, -1, 5, 0);
 
 	//print button close
