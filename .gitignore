@@ -26,3 +26,12 @@
 *.exe
 *.out
 *.app
+
+*.suo
+*.opensdf
+*.sdf
+*.log
+*.tlog
+*.exp
+*.pdb
+*.res
