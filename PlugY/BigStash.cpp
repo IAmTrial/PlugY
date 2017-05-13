@@ -28,10 +28,10 @@ InventoryBIN* STDCALL modifStashGrid(InventoryBIN* ptInventoryBin)
 	InventoryBIN* inventory=ptInventoryBin+12;
 	inventory->gridX = gridX_BB;
 	inventory->gridY = gridY_BB;
-	inventory->gridLeft = gridLeft_BB;
-	inventory->gridRight = gridRight_BB;
-	inventory->gridTop = gridTop_BB;
-	inventory->gridBottom = gridbottom_BB;
+    inventory->gridLeft = gridLeft_BB + 80 + 134;
+    inventory->gridRight = gridRight_BB + 80 + 134;
+    inventory->gridTop = gridTop_BB + 60;
+    inventory->gridBottom = gridbottom_BB + 60;
 
 	inventory = ptInventoryBin+28;
 	inventory->gridX = gridX_BB;
