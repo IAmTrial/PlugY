@@ -614,8 +614,6 @@ DWORD STDCALL mouseNewStatsPageLeftDown(sWinMessage* msg)
 {
 	if (!D2isLODGame() || !D2GetResolution()) return -1;
 
-	if (!isOnStatsPage(msg->x,msg->y)) return 1;
-
 	Unit* ptChar = D2GetClientPlayer();
 
 	if (isOnCloseBtn(msg->x,msg->y))
@@ -713,8 +711,6 @@ void sendAssignStats(DWORD code, DWORD nbStatPointsRemaining)
 DWORD STDCALL mouseNewStatsPageLeftUp(sWinMessage* msg)
 {
 	if (!D2isLODGame() || !D2GetResolution()) return -1;
-
-	if (!isOnStatsPage(msg->x,msg->y)) return 1;
 
 	Unit* ptChar = D2GetClientPlayer();
 	DWORD nbStatPointsRemaining = D2GetPlayerBaseStat(ptChar, 4, 0);

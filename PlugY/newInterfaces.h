@@ -9,7 +9,6 @@
 #include "common.h"
 
 #define MILIEU(X,L,N) (X + ((N<L)? (L-N)/2 : 0))
-#define isOnStatsPage(x,y)		((x<400) && (y<553))
 
 extern DWORD bDontPrintBorder;
 

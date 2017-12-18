@@ -243,7 +243,6 @@ DWORD STDCALL mouseNewStatsPageTwoLeftDown(sWinMessage* msg)
 
 	DWORD x = D2GetMouseX();
 	DWORD y = D2GetMouseY();
-	if (!isOnStatsPage(x,y)) return 1;
 
 	if (isOnCloseBtn(x,y))
 	{
@@ -275,7 +274,6 @@ DWORD STDCALL mouseNewStatsPageTwoLeftUp(sWinMessage* msg)
 
 	DWORD x = D2GetMouseX();
 	DWORD y = D2GetMouseY();
-	if (!isOnStatsPage(x,y)) return 1;
 
 	if (isOnCloseBtn(x,y))
 	{

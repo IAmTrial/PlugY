@@ -210,8 +210,6 @@ DWORD STDCALL mouseRunewordsPageLeftDown(sWinMessage* msg)
 {
 	if (!D2isLODGame() || !D2GetResolution()) return -1;
 
-	if (!isOnStatsPage(msg->x,msg->y)) return 1;
-
 	if (isOnCloseBtn(msg->x,msg->y))
 	{
 		log_msg("push down left button close\n");
@@ -245,8 +243,6 @@ DWORD STDCALL mouseRunewordsPageLeftDown(sWinMessage* msg)
 DWORD STDCALL mouseRunewordsPageLeftUp(sWinMessage* msg)
 {
 	if (!D2isLODGame() || !D2GetResolution()) return -1;
-
-	if (!isOnStatsPage(msg->x,msg->y)) return 1;
 
 	if (isOnCloseBtn(msg->x,msg->y))
 	{
